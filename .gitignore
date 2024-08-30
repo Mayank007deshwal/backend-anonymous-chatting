@@ -30,4 +30,6 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 .env
-config/test-pro-007-cd2a9a4d746f.json
+test-pro-007-firebase-adminsdk-fk63m-37a34be5a3.json
+.env.development
+.env.production
