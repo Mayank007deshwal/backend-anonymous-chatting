@@ -1,6 +1,6 @@
 module AuthToken
   def validate_token
-# byebug
+
     token = cookies[:auth_token]
 
     begin

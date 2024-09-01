@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post 'login', to: 'login#create'
   post 'signup', to: 'signup#create'
   post 'logout', to: 'login#logout'
+  post 'users/add_device_token', to: 'users#add_device_token'
   resources :posts do
     resources :messages, only: [:index, :create, :new, :show, :edit, :update, :destroy]
   end

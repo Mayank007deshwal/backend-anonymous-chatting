@@ -9,7 +9,8 @@ class LoginController < ApplicationController
 
     if is_authenticated
       set_cookies
-      render json: @user
+      devise_id = @user.devise_token.try(:devise_id)
+      render json: @user.attributes.merge(devise_id: devise_id)
     else
       render json: {errors: "Email and password are not correct!"}
     end

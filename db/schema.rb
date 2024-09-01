@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_08_23_075442) do
+ActiveRecord::Schema.define(version: 2024_08_30_211420) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -59,6 +59,14 @@ ActiveRecord::Schema.define(version: 2024_08_23_075442) do
     t.index ["user_2_id"], name: "index_conversations_on_user_2_id"
   end
 
+  create_table "devise_tokens", force: :cascade do |t|
+    t.string "devise_id"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_devise_tokens_on_user_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.text "body"
     t.integer "post_id", null: false
@@ -88,5 +96,6 @@ ActiveRecord::Schema.define(version: 2024_08_23_075442) do
   add_foreign_key "chats", "users", column: "sender_id"
   add_foreign_key "conversations", "users", column: "user_1_id"
   add_foreign_key "conversations", "users", column: "user_2_id"
+  add_foreign_key "devise_tokens", "users"
   add_foreign_key "messages", "posts"
 end
