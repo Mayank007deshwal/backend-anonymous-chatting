@@ -7,7 +7,7 @@ class Post < ApplicationRecord
 
   has_many :messages
   # after_create :broadcast_creation
-  private
+  # private
 
   # def send_notification
   #   SendNotificationJob.perform_later(
@@ -15,7 +15,7 @@ class Post < ApplicationRecord
   #     title,
   #     description
   #   )
-  end
+  # end
 
 
   # def broadcast_creation
