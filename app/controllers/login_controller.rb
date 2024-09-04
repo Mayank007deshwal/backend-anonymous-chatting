@@ -48,6 +48,7 @@ class LoginController < ApplicationController
       httponly: true,   # Makes the cookie HTTP-only
       secure: Rails.env.production?,  # Ensure it's only sent over HTTPS in production
       expires: 1.day.from_now # Set expiration if needed
+      # same_site: :none
     }
   end
 end
